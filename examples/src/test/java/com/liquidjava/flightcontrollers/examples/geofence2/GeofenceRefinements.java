@@ -1,4 +1,4 @@
-package com.liquidjava.flightcontrollers.examples;
+package com.liquidjava.flightcontrollers.examples.geofence2;
 
 import io.mavsdk.geofence.Geofence;
 import liquidjava.specification.ExternalRefinementsFor;

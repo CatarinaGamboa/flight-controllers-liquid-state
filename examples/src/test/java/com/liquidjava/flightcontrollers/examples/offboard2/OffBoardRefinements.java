@@ -1,4 +1,4 @@
-package com.liquidjava.flightcontrollers.examples;
+package com.liquidjava.flightcontrollers.examples.offboard2;
 
 import io.mavsdk.offboard.Offboard;
 import liquidjava.specification.ExternalRefinementsFor;

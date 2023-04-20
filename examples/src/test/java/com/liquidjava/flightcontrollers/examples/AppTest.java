@@ -15,15 +15,47 @@ import liquidjava.api.CommandLineLauncher;
 public class AppTest {
 	
 	 String testPath = "./src/test/java/com/liquidjava/flightcontrollers/examples/";
-    
-	 
-	 
+   
 	 
 	 
     @Test
     public void correctMissionController() {
         testCorrect(testPath + "mission_controller1");
     } 
+    
+    @Test
+    public void errorMissionController() {
+        testError(testPath + "mission_controller2");
+    } 
+    
+    @Test
+    public void correctGeofence() {
+        testCorrect(testPath + "geofence1");
+    } 
+    
+    @Test
+    public void errorMissionGeofence() {
+        testError(testPath + "geofence2");
+    } 
+    
+    
+    @Test
+    public void correctOffboard() {
+        testCorrect(testPath + "offboard1");
+    } 
+    
+    @Test
+    public void errorOffboard() {
+        testError(testPath + "offboard2");
+    } 
+    
+    @Test
+    public void errorOffboard2() {
+        testError(testPath + "offboard3");
+    } 
+    
+    
+    
 
     protected void testCorrect(String filename) {
         MySecurityManager secManager = new MySecurityManager();
@@ -35,7 +67,7 @@ public class AppTest {
         }
     }
 
-    protected void testWrong(String filename) {
+    protected void testError(String filename) {
         MySecurityManager secManager = new MySecurityManager();
         System.setSecurityManager(secManager);
         try {

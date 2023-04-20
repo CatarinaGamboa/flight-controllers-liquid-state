@@ -1,4 +1,4 @@
-package com.liquidjava.flightcontrollers.examples;
+package com.liquidjava.flightcontrollers.examples.offboard1;
 
 import io.mavsdk.geofence.Geofence;
 import io.mavsdk.mission.Mission;
