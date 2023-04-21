@@ -55,6 +55,18 @@ public class AppTest {
     } 
     
     
+    @Test
+    public void correctCamera() {
+        testCorrect(testPath + "camera1");
+    } 
+    
+    
+    @Test
+    public void errorCamera() {
+        testError(testPath + "camera2");
+    } 
+    
+    
     
 
     protected void testCorrect(String filename) {

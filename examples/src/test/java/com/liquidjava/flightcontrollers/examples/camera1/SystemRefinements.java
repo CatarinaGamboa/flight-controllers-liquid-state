@@ -1,4 +1,4 @@
-package com.liquidjava.flightcontrollers.examples;
+package com.liquidjava.flightcontrollers.examples.camera1;
 
 import io.mavsdk.camera.Camera;
 import io.mavsdk.geofence.Geofence;
