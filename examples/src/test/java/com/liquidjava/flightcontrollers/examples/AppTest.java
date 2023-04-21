@@ -67,6 +67,18 @@ public class AppTest {
     } 
     
     
+    @Test
+    public void correctFollowMe() {
+        testCorrect(testPath + "followme1");
+    } 
+    
+    
+    @Test
+    public void errorFollowMe() {
+        testError(testPath + "followme2");
+    } 
+    
+    
     
 
     protected void testCorrect(String filename) {
