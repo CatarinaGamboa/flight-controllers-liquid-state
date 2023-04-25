@@ -2,6 +2,7 @@ package com.liquidjava.flightcontrollers.examples;
 
 import io.mavsdk.camera.Camera;
 import io.mavsdk.follow_me.FollowMe;
+import io.mavsdk.ftp.Ftp;
 import io.mavsdk.geofence.Geofence;
 import io.mavsdk.mission.Mission;
 import io.mavsdk.mocap.Mocap;
@@ -32,4 +33,9 @@ public interface SystemRefinements {
 	
 	@Refinement("mocapUninitialized(_)")
 	public Mocap getMocap();
+	
+	
+	@Refinement("ftpUnconnected(_)")
+	public Ftp getFTP();
+	
 }

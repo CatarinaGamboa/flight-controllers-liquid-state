@@ -24,7 +24,6 @@ public class App {
 		c.dispose();
 		
 		
-		
 //		Geofence g = drone.getGeofence();
 //		g.initialize();
 //		g.uploadGeofence(null);
