@@ -1,4 +1,4 @@
-package com.liquidjava.flightcontrollers.examples;
+package com.liquidjava.flightcontrollers.examples.mocap2;
 
 import io.mavsdk.camera.Camera;
 import io.mavsdk.follow_me.FollowMe;

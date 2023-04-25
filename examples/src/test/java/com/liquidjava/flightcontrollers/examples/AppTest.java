@@ -78,8 +78,16 @@ public class AppTest {
         testError(testPath + "followme2");
     } 
     
+    @Test
+    public void correctMocap() {
+        testCorrect(testPath + "mocap1");
+    } 
     
     
+    @Test
+    public void errorMocap() {
+        testError(testPath + "mocap2");
+    } 
 
     protected void testCorrect(String filename) {
         MySecurityManager secManager = new MySecurityManager();
