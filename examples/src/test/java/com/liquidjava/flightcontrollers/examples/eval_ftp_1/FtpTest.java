@@ -10,7 +10,9 @@ public class FtpTest {
 		ftp.initialize();
 		// suppose we have a /home directory in the companion computer
 		ftp.setRootDirectory("/home");
-
+		
+		// missing setId: Error
+		
 		// get the computer ID
 		ftp.getOurCompid();
 	}
