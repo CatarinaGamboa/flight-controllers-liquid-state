@@ -1,15 +1,15 @@
-public package io.mavsdk.example;
+package com.liquidjava.flightcontrollers.examples.example3;
+
+import java.util.concurrent.CountDownLatch;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+//refer to https://github.com/mavlink/MAVSDK-Java/tree/main/examples/java-client/src/main/java/io/mavsdk/example
+//package io.mavsdk.example;
 
 import io.mavsdk.System;
 import io.mavsdk.camera.Camera;
-import io.reactivex.Completable;
-import io.reactivex.Single;
-
-import java.util.List;
-import java.util.concurrent.CountDownLatch;
-import java.util.concurrent.TimeUnit;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 public class ListPhotos {
   private static final Logger logger = LoggerFactory.getLogger(ListPhotos.class);
@@ -22,6 +22,7 @@ public class ListPhotos {
 
     // Completable trying to take 50 pictures (stopping in case of error)
     Camera c = drone.getCamera();
+    //c.setMode(); //missing
     c.takePhoto();
     c.listPhotos(Camera.PhotosRange.ALL);
 }

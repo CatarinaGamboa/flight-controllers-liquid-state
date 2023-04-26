@@ -98,8 +98,14 @@ public class AppTest {
     
     
     @Test
-    public void correctExample2() {
-        testCorrect(testPath + "example2");
+    public void errorExample2() {
+    	testError(testPath + "example2");
+    } 
+    
+    
+    @Test
+    public void errorExample3() {
+    	testError(testPath + "example3");
     } 
     
 
