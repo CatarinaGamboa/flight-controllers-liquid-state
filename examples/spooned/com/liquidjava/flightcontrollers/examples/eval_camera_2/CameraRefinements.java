@@ -14,16 +14,8 @@ package com.liquidjava.flightcontrollers.examples.eval_camera_2;
 // io.reactivex.Completable	selectCamera​(java.lang.Integer cameraId)
 // io.reactivex.Completable	setSetting​(Camera.Setting setting)
 @liquidjava.specification.ExternalRefinementsFor("io.mavsdk.camera.Camera")
-@liquidjava.specification.StateSet({ "camUninitialized", "camInitialized", "camModeSet", "camVideoMode", "camPhotoMode" })
+@liquidjava.specification.StateSet({ "camUninitialized", "camInitialized", "camModeSet", "camVideoMode", "camVideoStreamingMode", "camPhotoIntervalMode" })
 public interface CameraRefinements {
-    // Questions:
-    // dispose goes from anything to unintialize
-    // since there is startVideo and startVideoStream maybe we should have 2 states for video right?
-    // it doesnt make sense to call startVideo and then stopVideoStreaming or does it?
-    // and the same with PhotoMode, it does not make sense to call stopPhotoStreaming after takePhoto
-    // listPhotos is in videoMode?
-    // getVideoStreamInfo() should be videoMode no?
-    // selectCamera(id) is not in any specific stage? and does Id need to be in a specific range?
     @liquidjava.specification.StateRefinement(to = "camUninitialized(this)")
     void Camera();
 
@@ -40,26 +32,32 @@ public interface CameraRefinements {
     @liquidjava.specification.StateRefinement(from = "camModeSet(this)", to = "camVideoMode(this)")
     io.reactivex.Completable startVideo();
 
-    @liquidjava.specification.StateRefinement(from = "camModeSet(this)", to = "camVideoMode(this)")
-    io.reactivex.Completable startVideoStreaming();
-
-    @liquidjava.specification.StateRefinement(from = "camVideoMode(this)")
-    io.reactivex.Single<java.util.List<io.mavsdk.camera.Camera.CaptureInfo>> listPhotos​(io.mavsdk.camera.Camera.PhotosRange photosRange);
-
     @liquidjava.specification.StateRefinement(from = "camVideoMode(this)", to = "camModeSet(this)")
     io.reactivex.Completable stopVideo();
 
-    @liquidjava.specification.StateRefinement(from = "camVideoMode(this)", to = "camModeSet(this)")
+    // Video Streaming
+    @liquidjava.specification.StateRefinement(from = "camModeSet(this)", to = "camVideoStreamingMode(this)")
+    io.reactivex.Completable startVideoStreaming();
+
+    @liquidjava.specification.StateRefinement(from = "camVideoStreamingMode(this)", to = "camModeSet(this)")
     io.reactivex.Completable stopVideoStreaming();
 
     // Photos
     @liquidjava.specification.StateRefinement(from = "camModeSet(this)", to = "camModeSet(this)")
     io.reactivex.Completable takePhoto();
 
-    @liquidjava.specification.StateRefinement(from = "camModeSet(this)", to = "camPhotoMode(this)")
+    @liquidjava.specification.StateRefinement(from = "camModeSet(this)", to = "camModeSet(this)")
+    io.reactivex.Completable selectCamera​(java.lang.Integer cameraId);
+
+    // Photo Interval
+    @liquidjava.specification.StateRefinement(from = "camModeSet(this)", to = "camPhotoIntervalMode(this)")
     io.reactivex.Completable startPhotoInterval​(java.lang.Float intervalS);
 
-    @liquidjava.specification.StateRefinement(from = "camPhotoMode(this)", to = "camModeSet(this)")
+    @liquidjava.specification.StateRefinement(from = "camPhotoIntervalMode(this)", to = "camModeSet(this)")
     io.reactivex.Completable stopPhotoInterval();
+
+    @liquidjava.specification.StateRefinement(from = "camPhotoIntervalMode(this)", to = "camPhotoIntervalMode(this)")
+    @liquidjava.specification.StateRefinement(from = "camModeSet(this)", to = "camModeSet(this)")
+    io.reactivex.Single<java.util.List<io.mavsdk.camera.Camera.CaptureInfo>> listPhotos​(io.mavsdk.camera.Camera.PhotosRange photosRange);
 }
 

@@ -18,7 +18,6 @@ public class App {
 		c.initialize();
 		c.setMode(null);
 		c.startVideo();
-		c.listPhotos(null);
 		c.stopVideo();
 		c.takePhoto();
 		c.dispose();

@@ -1,4 +1,4 @@
-package com.liquidjava.flightcontrollers.examples;
+package com.liquidjava.flightcontrollers.examples.eval_ftp_1;
 
 import liquidjava.specification.ExternalRefinementsFor;
 import liquidjava.specification.StateRefinement;
@@ -28,7 +28,6 @@ public interface FTPRefinements {
 	io.reactivex.Completable	reset()	 ;
 	
 	@StateRefinement(from="ftpIdSet(this)", to="ftpIdSet(this)")
-	@StateRefinement(from="ftpIdRootDirectorySet(this)", to="ftpIdRootDirectorySet(this)")
 	@StateRefinement(from="ftpIdRootDirectorySet(this)", to="ftpIdRootDirectorySet(this)")
 	io.reactivex.Single<java.lang.Integer>	getOurCompid()	 ;
 	
