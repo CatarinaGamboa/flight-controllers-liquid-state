@@ -1,4 +1,4 @@
-// https://github.com/jankrystianserafim/android-client/blob/d622b16126c2421dcff27e1be0d59c22deaab349/app/src/main/java/io/mavsdk/androidclient/MapsViewModel.java
+// https://github.com/KINGPEYTON/mavlink-test/blob/b8b9704d12cc162a5591f8b70ca5395c6824586b/app/src/main/java/io/mavsdk/androidclient/MapsViewModel.java
 // package io.mavsdk.androidclient;
 
 import android.annotation.SuppressLint;
@@ -16,7 +16,7 @@ import org.slf4j.LoggerFactory;
 /**
  * ViewModel to hold objects that should be persisted.
  */
-public class AndroidMission extends ViewModel {
+public class AndroidMission2 extends ViewModel {
   private static final Logger logger = LoggerFactory.getLogger(MapsViewModel.class);
 
   private static final float MISSION_HEIGHT = 5.0f;
@@ -53,7 +53,10 @@ public class AndroidMission extends ViewModel {
             Float.NaN,
             Mission.MissionItem.CameraAction.NONE,
             Float.NaN,
-            1.0);
+            1.0,
+            Float.NaN,
+            Float.NaN,
+            Float.NaN);
         missionItems.add(missionItem);
       }
 
@@ -62,8 +65,8 @@ public class AndroidMission extends ViewModel {
       logger.debug("Uploading and starting mission...");
       drone.getMission().setReturnToLaunchAfterMission(true);
       drone.getMission().uploadMission(missionPlan);
+      logger.debug("Upload succeeded");
       drone.getAction().arm();
-                       
       drone.getMission().startMission();
       logger.debug("Mission started");
     }
