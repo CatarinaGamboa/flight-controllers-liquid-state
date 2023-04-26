@@ -5,7 +5,7 @@ package com.liquidjava.flightcontrollers.examples.eval_ftp_1;
 @liquidjava.specification.ExternalRefinementsFor("io.mavsdk.ftp.Ftp")
 public interface FTPRefinements {
     @liquidjava.specification.StateRefinement(to = "ftpUnconnected(this)")
-    void FTP();
+    void Ftp();
 
     @liquidjava.specification.StateRefinement(from = "!ftpUnconnected(this)", to = "ftpUnconnected(this)")
     void dispose();

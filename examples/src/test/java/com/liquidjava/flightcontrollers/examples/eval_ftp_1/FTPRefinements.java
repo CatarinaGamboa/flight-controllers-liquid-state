@@ -9,7 +9,7 @@ import liquidjava.specification.StateSet;
 public interface FTPRefinements {
 	
 	@StateRefinement(to="ftpUnconnected(this)")
-	void FTP();
+	void Ftp();
 
 	@StateRefinement(from="!ftpUnconnected(this)", to="ftpUnconnected(this)")
 	void	dispose()	;
@@ -28,7 +28,6 @@ public interface FTPRefinements {
 	io.reactivex.Completable	reset()	 ;
 	
 	@StateRefinement(from="ftpIdSet(this)", to="ftpIdSet(this)")
-	@StateRefinement(from="ftpIdRootDirectorySet(this)", to="ftpIdRootDirectorySet(this)")
 	@StateRefinement(from="ftpIdRootDirectorySet(this)", to="ftpIdRootDirectorySet(this)")
 	io.reactivex.Single<java.lang.Integer>	getOurCompid()	 ;
 	

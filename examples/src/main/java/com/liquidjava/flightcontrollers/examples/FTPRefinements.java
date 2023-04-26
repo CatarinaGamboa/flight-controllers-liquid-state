@@ -9,7 +9,7 @@ import liquidjava.specification.StateSet;
 public interface FTPRefinements {
 	
 	@StateRefinement(to="ftpUnconnected(this)")
-	void FTP();
+	void Ftp();
 
 	@StateRefinement(from="!ftpUnconnected(this)", to="ftpUnconnected(this)")
 	void	dispose()	;
