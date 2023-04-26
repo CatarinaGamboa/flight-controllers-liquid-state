@@ -108,6 +108,12 @@ public class AppTest {
     	testError(testPath + "eval_camera_2");
     } 
     
+    @Test
+    public void correctEvalFtp() {
+        testCorrect(testPath + "eval_ftp_1");
+    } 
+    
+    
 
     protected void testCorrect(String filename) {
         MySecurityManager secManager = new MySecurityManager();
