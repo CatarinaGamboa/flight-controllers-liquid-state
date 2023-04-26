@@ -78,7 +78,29 @@ public class AppTest {
         testError(testPath + "followme2");
     } 
     
+    @Test
+    public void correctMocap() {
+        testCorrect(testPath + "mocap1");
+    } 
     
+    
+    @Test
+    public void errorMocap() {
+        testError(testPath + "mocap2");
+    } 
+    
+    
+    
+    @Test
+    public void correctExample1() {
+        testCorrect(testPath + "example1");
+    } 
+    
+    
+    @Test
+    public void correctExample2() {
+        testCorrect(testPath + "example2");
+    } 
     
 
     protected void testCorrect(String filename) {

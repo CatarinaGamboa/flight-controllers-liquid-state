@@ -16,12 +16,6 @@ public class App {
         c.stopVideo();
         c.takePhoto();
         c.dispose();
-        // Geofence g = drone.getGeofence();
-        // g.initialize();
-        // g.uploadGeofence(null);
-        // g.clearGeofence();
-        // g.uploadGeofence(null);
-        // g.dispose();
     }
 }
 

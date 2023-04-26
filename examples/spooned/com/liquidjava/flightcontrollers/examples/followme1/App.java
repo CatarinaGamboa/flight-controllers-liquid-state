@@ -9,6 +9,7 @@ public class App {
         io.mavsdk.System drone = new io.mavsdk.System();
         io.mavsdk.follow_me.FollowMe fm = drone.getFollowMe();
         fm.initialize();
+        fm.setTargetLocation(null);
         fm.setConfig(null);
         fm.getConfig();
         fm.start();

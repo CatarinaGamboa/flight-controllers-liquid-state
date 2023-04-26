@@ -6,11 +6,9 @@ import liquidjava.specification.StateRefinement;
 import liquidjava.specification.StateSet;
 
 @ExternalRefinementsFor("io.mavsdk.follow_me.FollowMe")
-@StateSet({"fmUninitialized", "fmInitialized", "fmConfigSet", "fmModeStarted"})
+@StateSet({"fmUninitialized", "fmInitialized", "fmConfigSet", "fmTargetSet", "fmConfigTargetSet", "fmModeStarted"})
 public interface FollowMeRefinements {
 
-	//Questions:
-	//does an object need to have both setConfig and setTargetLocation before starting? or just one of them?
 	
 	@StateRefinement(to="fmUninitialized(this)")
 	void 	FollowMe();	
@@ -22,23 +20,32 @@ public interface FollowMeRefinements {
 	void	dispose();
 	
 
-	@StateRefinement(from="fmInitialized(this) || fmConfigSet(this)", to="fmConfigSet(this)")
+	@StateRefinement(from="fmInitialized(this)", to="fmConfigSet(this)")
+	@StateRefinement(from="fmConfigSet(this)", to="fmConfigSet(this)")
+	@StateRefinement(from="fmTargetSet(this)", to="fmConfigTargetSet(this)")
+	@StateRefinement(from="fmConfigTargetSet(this)", to="fmConfigTargetSet(this)")
 	io.reactivex.Completable setConfig​(FollowMe.Config config);
 	
-	@StateRefinement(from="fmInitialized(this) || fmConfigSet(this)", to="fmConfigSet(this)")
+	
+	@StateRefinement(from="fmInitialized(this)", to="fmTargetSet(this)")
+	@StateRefinement(from="fmTargetSet(this)", to="fmTargetSet(this)")
+	@StateRefinement(from="fmConfigSet(this)", to="fmConfigTargetSet(this)")
+	@StateRefinement(from="fmConfigTargetSet(this)", to="fmConfigTargetSet(this)")
 	io.reactivex.Completable setTargetLocation​(FollowMe.TargetLocation location);
 	
-	@StateRefinement(from="fmConfigSet(this)")
+	@StateRefinement(from="fmConfigSet(this)", to="fmConfigSet(this)")
+	@StateRefinement(from="fmConfigTargetSet(this)", to="fmConfigTargetSet(this)")
 	io.reactivex.Single<FollowMe.Config> getConfig();
 	
-	@StateRefinement(from="fmConfigSet(this)", to="fmModeStarted(this)")
+	@StateRefinement(from="fmConfigTargetSet(this)", to="fmModeStarted(this)")
 	io.reactivex.Completable start();	 
 	
-	@StateRefinement(from="fmModeStarted(this)", to="fmConfigSet(this)")
+	@StateRefinement(from="fmModeStarted(this)", to="fmConfigTargetSet(this)")
 	io.reactivex.Completable stop();
 	
 	@StateRefinement(from="fmModeStarted(this)")
 	io.reactivex.Single<FollowMe.TargetLocation>	getLastLocation();
-	
+
+
 
 }

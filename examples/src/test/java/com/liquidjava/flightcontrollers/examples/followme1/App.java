@@ -15,12 +15,14 @@ public class App {
 		io.mavsdk.System drone = new io.mavsdk.System();
 		FollowMe fm = drone.getFollowMe();
 		fm.initialize();
+		fm.setTargetLocation(null);
 		fm.setConfig(null);
 		fm.getConfig();
 		fm.start();
 		fm.getLastLocation();
 		fm.stop();
 		fm.dispose();
+		
 		
     }
 }
