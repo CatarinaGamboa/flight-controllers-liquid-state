@@ -1,4 +1,4 @@
-package com.liquidjava.flightcontrollers.examples.example3;
+package com.liquidjava.flightcontrollers.examples.eval_camera_2;
 
 import java.util.concurrent.CountDownLatch;
 

@@ -1,4 +1,4 @@
-package com.liquidjava.flightcontrollers.examples.example1;
+package com.liquidjava.flightcontrollers.examples.eval_mission_1;
 
 import io.mavsdk.geofence.Geofence;
 import io.mavsdk.mission.Mission;
