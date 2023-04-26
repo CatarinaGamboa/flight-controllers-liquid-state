@@ -16,7 +16,7 @@ public class FollowMeTest {
     followMe.setConfig(config);
 
     followMe.start();
-    followMe.setTargetLocation(TargetLocation(47.39776569, 8.54553292, 0.0, 0.0, 0.0, 0.0)); // placeholder
+    followMe.setTargetLocation(new TargetLocation(47.39776569, 8.54553292, 0.0, 0.0, 0.0, 0.0)); // placeholder
     followMe.stop();
   
   }
