@@ -25,7 +25,6 @@ public interface FTPRefinements {
 
     @liquidjava.specification.StateRefinement(from = "ftpIdSet(this)", to = "ftpIdSet(this)")
     @liquidjava.specification.StateRefinement(from = "ftpIdRootDirectorySet(this)", to = "ftpIdRootDirectorySet(this)")
-    @liquidjava.specification.StateRefinement(from = "ftpIdRootDirectorySet(this)", to = "ftpIdRootDirectorySet(this)")
     io.reactivex.Single<java.lang.Integer> getOurCompid();
 
     @liquidjava.specification.StateRefinement(from = "ftpInitialized(this)", to = "ftpRootDirectorySet(this)")

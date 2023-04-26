@@ -109,8 +109,8 @@ public class AppTest {
     } 
     
     @Test
-    public void correctEvalFtp() {
-        testCorrect(testPath + "eval_ftp_1");
+    public void errorEvalFtp() {
+        testError(testPath + "eval_ftp_1");
     } 
     
     
