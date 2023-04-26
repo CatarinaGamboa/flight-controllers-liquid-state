@@ -96,6 +96,12 @@ public class AppTest {
         testCorrect(testPath + "example1");
     } 
     
+    
+    @Test
+    public void correctExample2() {
+        testCorrect(testPath + "example2");
+    } 
+    
 
     protected void testCorrect(String filename) {
         MySecurityManager secManager = new MySecurityManager();
