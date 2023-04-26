@@ -92,14 +92,20 @@ public class AppTest {
     
     
     @Test
-    public void correctExample1() {
-        testCorrect(testPath + "example1");
+    public void correctEvalMission1() {
+        testCorrect(testPath + "eval_mission_1");
     } 
     
     
     @Test
-    public void correctExample2() {
-        testCorrect(testPath + "example2");
+    public void errorEvalCamera1() {
+    	testError(testPath + "eval_camera_1");
+    } 
+    
+    
+    @Test
+    public void errorEvalCamera2() {
+    	testError(testPath + "eval_camera_2");
     } 
     
 

@@ -21,7 +21,8 @@ uses Mission but is asynchronous
 similar to previous one
 
 #### Chosen to model:
-1. -
+1.  https://github.com/mavlink/MAVSDK-Java/tree/main/examples/java-client/src/main/java/io/mavsdk/example
+
 2. -
 
 ### Camera
@@ -36,7 +37,8 @@ keyword: `io.mavsdk.camera.Camera`
 [list photos](https://github.com/mavlink/MAVSDK-Java/blob/d4f9b6d5ef60d01423ee2d47ea6fa4892065efae/examples/java-client/src/main/java/io/mavsdk/example/ListPhotos.java#L4)
 
 #### Chosen to model:
-1. -
+1. https://github.com/mavlink/MAVSDK-Java/tree/main/examples/java-client/src/main/java/io/mavsdk/example
+
 2. -
 
 

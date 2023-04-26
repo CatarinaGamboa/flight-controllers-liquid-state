@@ -1,4 +1,4 @@
-package com.liquidjava.flightcontrollers.examples.example2;
+package com.liquidjava.flightcontrollers.examples.eval_camera_1;
 
 import java.util.concurrent.CountDownLatch;
 
@@ -23,7 +23,7 @@ public class RunCamera {
 		
 
 		Camera camera = drone.getCamera();
-		camera.setMode(Camera.Mode.PHOTO);//not in retrieved code
+		//camera.setMode(Camera.Mode.PHOTO);//not in retrieved code
 		camera.getCaptureInfo()
 			  .subscribe( (captureInfo) ->  logger.debug(captureInfo.getFileUrl()));
 		

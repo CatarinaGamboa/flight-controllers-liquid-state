@@ -1,4 +1,4 @@
-package com.liquidjava.flightcontrollers.examples.example1;
+package com.liquidjava.flightcontrollers.examples.eval_mission_1;
 
 import java.util.ArrayList;
 import java.util.List;

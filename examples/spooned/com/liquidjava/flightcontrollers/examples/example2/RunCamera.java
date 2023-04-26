@@ -15,7 +15,7 @@ public class RunCamera {
         io.mavsdk.System drone = new io.mavsdk.System();
         java.util.concurrent.CountDownLatch latch = new java.util.concurrent.CountDownLatch(1);
         io.mavsdk.camera.Camera camera = drone.getCamera();
-        camera.setMode(io.mavsdk.camera.Camera.Mode.PHOTO);
+        // camera.setMode(Camera.Mode.PHOTO);//not in retrieved code
         camera.getCaptureInfo().subscribe(( captureInfo) -> com.liquidjava.flightcontrollers.examples.example2.RunCamera.logger.debug(captureInfo.getFileUrl()));
         camera.takePhoto();
         com.liquidjava.flightcontrollers.examples.example2.RunCamera.logger.debug("Taking a photo...");
