@@ -1,4 +1,4 @@
-package com.liquidjava.flightcontrollers.examples;
+package com.liquidjava.flightcontrollers.examples.eval_offboard;
 
 import io.mavsdk.camera.Camera;
 import io.mavsdk.follow_me.FollowMe;
@@ -20,18 +20,18 @@ public interface SystemRefinements {
 	public Offboard getOffboard();
 	
 	
-	@Refinement("geoInitialized(_)")
+	@Refinement("geoUninitialized(_)")
 	public Geofence getGeofence();
 	
 	
-	@Refinement("camInitialized(_)")
+	@Refinement("camUninitialized(_)")
 	public Camera getCamera();
 	
-	@Refinement("fmInitialized(_)")
+	@Refinement("fmUninitialized(_)")
 	public FollowMe getFollowMe();
 	
 	
-	@Refinement("mocapInitialized(_)")
+	@Refinement("mocapUninitialized(_)")
 	public Mocap getMocap();
 	
 	

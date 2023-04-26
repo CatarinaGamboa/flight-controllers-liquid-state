@@ -1,4 +1,4 @@
-package com.liquidjava.flightcontrollers.examples;
+package com.liquidjava.flightcontrollers.examples.eval_offboard;
 
 import io.mavsdk.offboard.Offboard;
 import liquidjava.specification.ExternalRefinementsFor;
@@ -61,6 +61,8 @@ public interface OffBoardRefinements {
 	@StateRefinement(from="started(this)")
 	public io.reactivex.Completable	setAttitudeRate​(Offboard.AttitudeRate attitudeRate);
 	
+
+	
 	
 	//	io.reactivex.Single<java.lang.Boolean>	isActive()	 
 //	io.reactivex.Completable	setAccelerationNed​(Offboard.AccelerationNed accelerationNed)	 
@@ -73,6 +75,5 @@ public interface OffBoardRefinements {
 //	io.reactivex.Completable	setVelocityBody​(Offboard.VelocityBodyYawspeed velocityBodyYawspeed)	 
 //	io.reactivex.Completable	setVelocityNed​(Offboard.VelocityNedYaw velocityNedYaw)	 
 
-	
 	
 }

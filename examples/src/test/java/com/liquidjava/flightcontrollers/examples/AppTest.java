@@ -114,6 +114,12 @@ public class AppTest {
     } 
     
     
+    @Test
+    public void correctEvalOffBoard() {
+        testCorrect(testPath + "eval_offboard");
+    } 
+    
+    
 
     protected void testCorrect(String filename) {
         MySecurityManager secManager = new MySecurityManager();
