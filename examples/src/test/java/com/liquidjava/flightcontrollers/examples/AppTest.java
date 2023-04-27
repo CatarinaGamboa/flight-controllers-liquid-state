@@ -90,6 +90,7 @@ public class AppTest {
     } 
     
     
+    //---------- Evaluation ------------
     
     @Test
     public void correctEvalMission1() {
@@ -117,6 +118,11 @@ public class AppTest {
     @Test
     public void correctEvalOffBoard() {
         testCorrect(testPath + "eval_offboard");
+    } 
+    
+    @Test
+    public void errorEvalFollowMe() {
+        testError(testPath + "eval_followme_1");
     } 
     
     
