@@ -1,13 +1,6 @@
 package com.liquidjava.flightcontrollers.examples;
 
-import static org.junit.Assert.assertTrue;
-import static org.junit.Assert.fail;
-
-import java.security.Permission;
-
 import org.junit.Test;
-
-import liquidjava.api.CommandLineLauncher;
 
 /**
  * Unit test for simple App.
