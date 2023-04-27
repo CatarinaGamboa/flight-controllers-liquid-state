@@ -25,66 +25,58 @@ import io.mavsdk.mission.Mission.MissionPlan;
  * ViewModel to hold objects that should be persisted.
  */
 public class AndroidMission /*extends ViewModel*/ {
-//	private static final Logger logger = LoggerFactory.getLogger(AndroidMission.class);
-//
-//	private static final float MISSION_HEIGHT = 5.0f;
-//	private static final float MISSION_SPEED = 1.0f;
-//
-////	final MutableLiveData<LatLng> currentPositionLiveData = new MutableLiveData<>();
-////	final MutableLiveData<List<LatLng>> currentMissionPlanLiveData = new MutableLiveData<>();
-//
-////	public MapsViewModel() {
-////		currentMissionPlanLiveData.postValue(new ArrayList<>());
-////	}
-//
-////	@Override
-////	protected void onCleared() {
-////		super.onCleared();
-////	}
-//
-//	/**
-//	 * Executes the current mission.
-//	 */
-////	@SuppressLint("CheckResult")
-//	void startMission(System drone) {
-////		List<LatLng> latLngs = currentMissionPlanLiveData.getValue();
-//		if (latLngs != null) {
-//			List<Mission.MissionItem> missionItems = new ArrayList<>();
-//			for (LatLng latLng : latLngs) {
-//				Mission.MissionItem missionItem = new Mission.MissionItem(
-//						latLng.getLatitude(),
-//						latLng.getLongitude(),
-//						MISSION_HEIGHT,
-//						MISSION_SPEED,
-//						true,
-//						Float.NaN,
-//						Float.NaN,
-//						Mission.MissionItem.CameraAction.NONE,
-//						Float.NaN,
-//						1.0);
-//				missionItems.add(missionItem);
-//			}
-//
-//			MissionPlan missionPlan = new MissionPlan(missionItems);
-//
-//			logger.debug("Uploading and starting mission...");
-//			drone.getMission().setReturnToLaunchAfterMission(true);
-//			drone.getMission().uploadMission(missionPlan);
-//			drone.getAction().arm();
-//
-//			drone.getMission().startMission();
-//			logger.debug("Mission started");
-//		}
-//	}
-//
-//	/**
-//	 * Adds a waypoint to the current mission.
-//	 *
-//	 * @param latLng waypoint to add
-//	 */
-//	void addWaypoint(LatLng latLng) {
-//		List<LatLng> currentMissionItems = currentMissionPlanLiveData.getValue();
-//		currentMissionItems.add(latLng);
-//		currentMissionPlanLiveData.postValue(currentMissionItems);
-//	}
+	private static final Logger logger = LoggerFactory.getLogger(AndroidMission.class);
+
+	private static final float MISSION_HEIGHT = 5.0f;
+	private static final float MISSION_SPEED = 1.0f;
+
+	
+	////	final MutableLiveData<LatLng> currentPositionLiveData = new MutableLiveData<>();
+	////	final MutableLiveData<List<LatLng>> currentMissionPlanLiveData = new MutableLiveData<>();
+	//
+	////	public MapsViewModel() {
+	////		currentMissionPlanLiveData.postValue(new ArrayList<>());
+	////	}
+	//
+	////	@Override
+	////	protected void onCleared() {
+	////		super.onCleared();
+	////	}
+	//
+	
+	/**
+	 * Executes the current mission.
+	 */
+	void startMission() {
+		System drone = new System();
+
+		List<Mission.MissionItem> missionItems = new ArrayList<>();
+
+		Mission.MissionItem missionItem = new Mission.MissionItem(
+				0.0,
+				0.0,
+				MISSION_HEIGHT,
+				MISSION_SPEED,
+				true,
+				Float.NaN,
+				Float.NaN,
+				Mission.MissionItem.CameraAction.NONE,
+				Float.NaN,
+				1.0, null, null, null);
+		missionItems.add(missionItem);
+
+
+		MissionPlan missionPlan = new MissionPlan(missionItems);
+
+		logger.debug("Uploading and starting mission...");
+		Mission m = drone.getMission();
+		m.setReturnToLaunchAfterMission(true);
+		m.uploadMission(missionPlan);
+		drone.getAction().arm();
+
+		m.startMission();
+		logger.debug("Mission started");
+
+	}
+
 }

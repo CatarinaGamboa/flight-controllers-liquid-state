@@ -1,12 +1,7 @@
-/**
- * refer to https://github.com/mavlink/MAVSDK-Java/tree/main/examples/java-client/src/main/java/io/mavsdk/example
- */
-/**
- * package io.mavsdk.example;
- */
 package com.liquidjava.flightcontrollers.examples.eval_camera_1;
 
 
+// refer to https://github.com/mavlink/MAVSDK-Java/tree/main/examples/java-client/src/main/java/io/mavsdk/example
 public class RunCamera {
     private static final org.slf4j.Logger logger = org.slf4j.LoggerFactory.getLogger(com.liquidjava.flightcontrollers.examples.eval_camera_1.RunCamera.class);
 

@@ -55,6 +55,11 @@ public class TestEval {
 		at.testCorrect(testPath + "eval_mocap");
 	} 
 
+	@Test
+	public void correctEvalMission2() {
+		at.testCorrect(testPath + "eval_mission_2");
+	} 
+
 
 
 
