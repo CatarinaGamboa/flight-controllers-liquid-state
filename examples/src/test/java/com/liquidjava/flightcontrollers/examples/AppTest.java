@@ -125,6 +125,11 @@ public class AppTest {
         testError(testPath + "eval_followme_1");
     } 
     
+    @Test
+    public void correctEvalGeofence() {
+        testCorrect(testPath + "eval_geofence");
+    } 
+    
     
 
     protected void testCorrect(String filename) {
