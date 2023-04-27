@@ -12,16 +12,16 @@ public class RunCamera {
   private static final Logger logger = LoggerFactory.getLogger(RunCamera.class);
 
   public static void main(String[] args) {
-    logger.debug("Starting example: camera...");
+		logger.debug("Starting example: camera...");
 
-    System drone = new System();
-    CountDownLatch latch = new CountDownLatch(1);
-
-    Camera camera = drone.getCamera();
-    io.reactivex.Flowable<Camera.CaptureInfo> info = camera.getCaptureInfo();
-    logger.debug("Picture taken: " + captureInfo.getFileUrl());
-    camera.takePhoto();
-    logger.debug("Taking a photo...")
-    camera.takePhoto();
+		System drone = new System();
+		CountDownLatch latch = new CountDownLatch(1);
+		Camera camera = drone.getCamera();
+		//camera.setMode(Camera.Mode.PHOTO);//not in retrieved code
+		camera.getCaptureInfo()
+			  .subscribe( (captureInfo) ->  logger.debug(captureInfo.getFileUrl()));
+		camera.takePhoto();
+		logger.debug("Taking a photo...");
+		camera.takePhoto();
   }
 }

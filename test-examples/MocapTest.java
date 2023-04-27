@@ -6,14 +6,17 @@ import io.mavsdk.mocap.Mocap.Covariance;
 
 public class MocapTest {
   public static void main(String[] args) {
-    Mocap mocap = new Mocap();
-    mocap.initialize();
     
-    Quaternion q = new Quaternion(0, 0, 0, 0);
-    PositionBody position_body = new PositionBody(0, 0, 0);
+    io.mavsdk.System drone = new io.mavsdk.System();
 
-    AttitudePositionMocap message = new AttitudePositionMocap(0.0, q, position_body, new Covariance(null));
-    mocap.setAttitudePositionMocap(0.0, q, position_body, new Covariance(null));
-    mocap.set_vision_position_estimate(message);
+		Mocap mocap = drone.getMocap();
+
+		Quaternion q = new Quaternion(0f, 0f, 0f, 0f);
+		PositionBody position_body = new PositionBody(0f, 0f, 0f);
+
+		List<Float> lf = new ArrayList<>();
+		AttitudePositionMocap message = new AttitudePositionMocap(0l, q, position_body, new Covariance(lf));
+		mocap.setAttitudePositionMocap(message);
+		mocap.setVisionPositionEstimate(new VisionPositionEstimate(0l, position_body, new AngleBody(0f, 0f, 0f), new Covariance(lf)));
   }
 }

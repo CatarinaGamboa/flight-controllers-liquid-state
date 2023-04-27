@@ -4,12 +4,14 @@ import io.mavsdk.ftp.Ftp;
 
 public class FTP {
   public static void main(String[] args) {
-    Ftp ftp = new Ftp();
-    ftp.initialize();
-    // suppose we have a /home directory in the companion computer
-    ftp.setRootDirectory("/home");
-
-    // get the computer ID
-    ftp.getOurCompid();
-  }
+		Ftp ftp = new Ftp();
+		ftp.initialize();
+		// suppose we have a /home directory in the companion computer
+		ftp.setRootDirectory("/home");
+		
+		// missing setId: Error
+		
+		// get the computer ID
+		ftp.getOurCompid();
+	}
 }

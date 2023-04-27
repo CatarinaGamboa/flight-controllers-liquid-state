@@ -15,21 +15,23 @@ public class OffboardAndMission {
   private static final Logger logger = LoggerFactory.getLogger(OffboardAndMission.class);
 
   public static void main(String[] args) {
-    logger.debug("Starting example: takeoff and land...");
+		logger.debug("Starting example: takeoff and land...");
 
-    System drone = new System();
-    CountDownLatch latch = new CountDownLatch(1);
+		System drone = new System();
+		CountDownLatch latch = new CountDownLatch(1);
 
-    drone.getAction().arm();
-    logger.debug("Arming...");
-    drone.getAction().takeoff();
-    logger.debug("Taking off...");
+		Action a = drone.getAction();
+		a.arm();
+		logger.debug("Arming...");
+		a.takeoff();
+		logger.debug("Taking off...");
 
-    drone.getOffboard().setPositionNed(new Offboard.PositionNEDYaw(0f,0f,0f,0f));
-    drone.getOffboard().start();
-    drone.getOffboard().setPositionNed(new Offboard.PositionNEDYaw(5.0f,0f,-2.0f,0f));
-     
-    drone.getAction().land();
-    logger.debug("Landing...");
+		Offboard of = drone.getOffboard();
+		of.setPositionNed(new PositionNedYaw(0f,0f,0f,0f));
+		of.start();
+		of.setPositionNed(new PositionNedYaw(5.0f,0f,-2.0f,0f));
+
+		a.land();
+		logger.debug("Landing...");
   }
 }

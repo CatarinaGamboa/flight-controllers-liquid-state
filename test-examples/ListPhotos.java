@@ -12,17 +12,18 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 public class ListPhotos {
-  private static final Logger logger = LoggerFactory.getLogger(ListPhotos.class);
+	private static final Logger logger = LoggerFactory.getLogger(ListPhotos.class);
 
-  public static void main(String[] args) {
-    logger.debug("Starting example: taking and listing photos...");
+	public static void main(String[] args) {
+		logger.debug("Starting example: taking and listing photos...");
 
-    System drone = new System();
-    CountDownLatch latch = new CountDownLatch(1);
+		System drone = new System();
+		CountDownLatch latch = new CountDownLatch(1);
 
-    // Completable trying to take 50 pictures (stopping in case of error)
-    Camera c = drone.getCamera();
-    c.takePhoto();
-    c.listPhotos(Camera.PhotosRange.ALL);
-}
+		// Completable trying to take 50 pictures (stopping in case of error)
+		Camera c = drone.getCamera();
+		//c.setMode(); //missing
+		c.takePhoto();
+		c.listPhotos(Camera.PhotosRange.ALL);
+	}
 }
