@@ -7,9 +7,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 //import com.mapbox.mapboxsdk.geometry.LatLng;
-//
-////https://github.com/jankrystianserafim/android-client/blob/d622b16126c2421dcff27e1be0d59c22deaab349/app/src/main/java/io/mavsdk/androidclient/MapsViewModel.java
-//
+
 //import android.annotation.SuppressLint;
 //import androidx.lifecycle.MutableLiveData;
 //import androidx.lifecycle.ViewModel;
@@ -20,6 +18,11 @@ import org.slf4j.LoggerFactory;
 import io.mavsdk.System;
 import io.mavsdk.mission.Mission;
 import io.mavsdk.mission.Mission.MissionPlan;
+
+
+
+
+//https://github.com/jankrystianserafim/android-client/blob/d622b16126c2421dcff27e1be0d59c22deaab349/app/src/main/java/io/mavsdk/androidclient/MapsViewModel.java
 
 /**
  * ViewModel to hold objects that should be persisted.
@@ -62,7 +65,10 @@ public class AndroidMission /*extends ViewModel*/ {
 				Float.NaN,
 				Mission.MissionItem.CameraAction.NONE,
 				Float.NaN,
-				1.0, null, null, null);
+				1.0, 
+				Float.NaN,
+		        Float.NaN,
+		        Float.NaN);
 		missionItems.add(missionItem);
 
 

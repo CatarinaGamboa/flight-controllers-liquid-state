@@ -2,15 +2,6 @@
  * import com.mapbox.mapboxsdk.geometry.LatLng;
  */
 /**
- *
- */
-/**
- * //https://github.com/jankrystianserafim/android-client/blob/d622b16126c2421dcff27e1be0d59c22deaab349/app/src/main/java/io/mavsdk/androidclient/MapsViewModel.java
- */
-/**
- *
- */
-/**
  * import android.annotation.SuppressLint;
  */
 /**
@@ -28,6 +19,7 @@
 package com.liquidjava.flightcontrollers.examples.eval_mission_2;
 
 
+// https://github.com/jankrystianserafim/android-client/blob/d622b16126c2421dcff27e1be0d59c22deaab349/app/src/main/java/io/mavsdk/androidclient/MapsViewModel.java
 /**
  * ViewModel to hold objects that should be persisted.
  */
@@ -57,7 +49,7 @@ public class AndroidMission {
     void startMission() {
         io.mavsdk.System drone = new io.mavsdk.System();
         java.util.List<io.mavsdk.mission.Mission.MissionItem> missionItems = new java.util.ArrayList<>();
-        io.mavsdk.mission.Mission.MissionItem missionItem = new io.mavsdk.mission.Mission.MissionItem(0.0, 0.0, com.liquidjava.flightcontrollers.examples.eval_mission_2.AndroidMission.MISSION_HEIGHT, com.liquidjava.flightcontrollers.examples.eval_mission_2.AndroidMission.MISSION_SPEED, true, java.lang.Float.NaN, java.lang.Float.NaN, io.mavsdk.mission.Mission.MissionItem.CameraAction.NONE, java.lang.Float.NaN, 1.0, null, null, null);
+        io.mavsdk.mission.Mission.MissionItem missionItem = new io.mavsdk.mission.Mission.MissionItem(0.0, 0.0, com.liquidjava.flightcontrollers.examples.eval_mission_2.AndroidMission.MISSION_HEIGHT, com.liquidjava.flightcontrollers.examples.eval_mission_2.AndroidMission.MISSION_SPEED, true, java.lang.Float.NaN, java.lang.Float.NaN, io.mavsdk.mission.Mission.MissionItem.CameraAction.NONE, java.lang.Float.NaN, 1.0, java.lang.Float.NaN, java.lang.Float.NaN, java.lang.Float.NaN);
         missionItems.add(missionItem);
         io.mavsdk.mission.Mission.MissionPlan missionPlan = new io.mavsdk.mission.Mission.MissionPlan(missionItems);
         com.liquidjava.flightcontrollers.examples.eval_mission_2.AndroidMission.logger.debug("Uploading and starting mission...");

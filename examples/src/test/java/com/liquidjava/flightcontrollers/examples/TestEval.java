@@ -59,6 +59,11 @@ public class TestEval {
 	public void correctEvalMission2() {
 		at.testCorrect(testPath + "eval_mission_2");
 	} 
+	
+	@Test
+	public void correctEvalMission3() {
+		at.testCorrect(testPath + "eval_mission_3");
+	} 
 
 
 
