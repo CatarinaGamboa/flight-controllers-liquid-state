@@ -18,9 +18,6 @@ import io.mavsdk.offboard.Offboard.PositionNedYaw;
 
 public class Test {
 
-
-
-
 	private static final Logger logger = LoggerFactory.getLogger(Test.class);
 
 	public static void main(String[] args) {

@@ -6,16 +6,12 @@ import java.util.concurrent.CountDownLatch;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-
-//refer to https://github.com/mavlink/MAVSDK-Java/tree/main/examples/java-client/src/main/java/io/mavsdk/example
-//package io.mavsdk.example;
-
 import io.mavsdk.System;
 import io.mavsdk.mission.Mission;
-import io.mavsdk.telemetry.Telemetry;
 import io.mavsdk.telemetry.Telemetry.FlightMode;
 import io.reactivex.Flowable;
 
+//refer to https://github.com/mavlink/MAVSDK-Java/tree/main/examples/java-client/src/main/java/io/mavsdk/example
 public class RunMission {
 	private static final Logger logger = LoggerFactory.getLogger(RunMission.class);
 
@@ -39,7 +35,8 @@ public class RunMission {
 		}
 
 		Mission.MissionPlan missionPlan = new Mission.MissionPlan(missionItems);
-//		logger.debug("About to upload " + missionItems.size() + " mission items");
+		String s = Integer.toString(missionItems.size());
+		logger.debug("About to upload ".concat(s).concat(" mission items"));
 
 		CountDownLatch latch = new CountDownLatch(1);
 		Mission mission = drone.getMission();

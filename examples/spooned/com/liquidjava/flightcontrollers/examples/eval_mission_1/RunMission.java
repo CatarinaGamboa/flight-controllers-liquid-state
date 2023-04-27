@@ -1,12 +1,7 @@
-/**
- * refer to https://github.com/mavlink/MAVSDK-Java/tree/main/examples/java-client/src/main/java/io/mavsdk/example
- */
-/**
- * package io.mavsdk.example;
- */
 package com.liquidjava.flightcontrollers.examples.eval_mission_1;
 
 
+// refer to https://github.com/mavlink/MAVSDK-Java/tree/main/examples/java-client/src/main/java/io/mavsdk/example
 public class RunMission {
     private static final org.slf4j.Logger logger = org.slf4j.LoggerFactory.getLogger(com.liquidjava.flightcontrollers.examples.eval_mission_1.RunMission.class);
 
@@ -25,7 +20,8 @@ public class RunMission {
             missionItems.addAll(cycle);
         }
         io.mavsdk.mission.Mission.MissionPlan missionPlan = new io.mavsdk.mission.Mission.MissionPlan(missionItems);
-        // logger.debug("About to upload " + missionItems.size() + " mission items");
+        java.lang.String s = java.lang.Integer.toString(missionItems.size());
+        com.liquidjava.flightcontrollers.examples.eval_mission_1.RunMission.logger.debug("About to upload ".concat(s).concat(" mission items"));
         java.util.concurrent.CountDownLatch latch = new java.util.concurrent.CountDownLatch(1);
         io.mavsdk.mission.Mission mission = drone.getMission();
         mission.setReturnToLaunchAfterMission(true);
